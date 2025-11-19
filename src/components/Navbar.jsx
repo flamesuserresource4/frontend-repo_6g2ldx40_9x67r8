@@ -1,7 +1,8 @@
 import { Link, NavLink } from 'react-router-dom'
-import { ShoppingCart, User, Menu } from 'lucide-react'
+import { User, Menu } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import ThemeToggle from './ThemeToggle'
+import CartBadge from './CartBadge'
 
 const navItems = [
   { to: '/products', label: 'Categories' },
@@ -55,9 +56,7 @@ export default function Navbar() {
             <Link to="/login" className="p-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/5" aria-label="Account">
               <User className="w-5 h-5 text-[#1A1A1A] dark:text-[#FFF8F0]" />
             </Link>
-            <Link to="/cart" className="p-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/5" aria-label="Cart">
-              <ShoppingCart className="w-5 h-5 text-[#1A1A1A] dark:text-[#FFF8F0]" />
-            </Link>
+            <CartBadge />
             <button className="lg:hidden p-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/5" onClick={() => setOpen((v) => !v)} aria-label="Menu">
               <Menu className="w-5 h-5 text-[#1A1A1A] dark:text-[#FFF8F0]" />
             </button>
@@ -77,7 +76,7 @@ export default function Navbar() {
                 className={({ isActive }) => [
                   'block px-3 py-2 rounded-lg',
                   'text-[#1A1A1A] dark:text-[#FFF8F0] hover:bg-black/5 dark:hover:bg-white/5',
-                  isActive ? 'bg-black/5 dark:bg-white/10 text-[#7A2E2E] dark:text-[#D4A017]' : '',
+                  isActive ? 'bg-black/5 dark:bg:white/10 text-[#7A2E2E] dark:text-[#D4A017]' : '',
                 ].join(' ')}
               >
                 {item.label}

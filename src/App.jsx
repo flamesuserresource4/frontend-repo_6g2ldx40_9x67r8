@@ -1,5 +1,5 @@
 import { Routes, Route, useParams } from 'react-router-dom'
-import { HomePage, AboutPage, HelpCenterPage, ShippingInfoPage, ProductsPage, ProductDetailPage, AuthPage, SellerDashboardPage } from './pages'
+import { HomePage, AboutPage, HelpCenterPage, ShippingInfoPage, ProductsPage, ProductDetailPage, AuthPage, SellerDashboardPage, CartPage } from './pages'
 import './index.css'
 
 function ProductDetailWrapper() {
@@ -19,6 +19,7 @@ export default function App() {
       <Route path="/login" element={<AuthPage mode="login" />} />
       <Route path="/signup" element={<AuthPage mode="signup" />} />
       <Route path="/seller" element={<SellerDashboardPage />} />
+      <Route path="/cart" element={<CartPage />} />
     </Routes>
   )
 }
